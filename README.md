@@ -25,6 +25,7 @@ $ git checkout master
 $ git checkout 01-basic-sql
 $ git checkout 02-connect-mysql
 $ git checkout 03-get-route-question
-$ git checkout 04-activity-01
+$ git checkout 04-activity-01-start
 $ git checkout 05-activity-01-solution
+$ git checkout 06-sequelize-code-review
 ```
