@@ -23,4 +23,6 @@
 ```
 $ git checkout master
 $ git checkout 01-basic-sql
+$ git checkout 02-connect-mysql
+$ git checkout 03-get-route-question
 ```
