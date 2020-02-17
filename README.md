@@ -31,4 +31,6 @@ $ git checkout 06-sequelize-code-review
 $ git checkout 07-activity-02-start
 $ git checkout 08-activity-02-solution
 $ git checkout 09-mongodb-cli
+$ git checkout 10-activity-03-start
+$ git checkout 10-activity-03-solution
 ```
