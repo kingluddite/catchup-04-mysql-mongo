@@ -1,36 +1,28 @@
-# Catchup #4: MySQL & Mongo
+# Review the solutions
 
-## Instructions
-### Clone to your computer
-* **note** The `$` below means "Type this in the Terminal". When writing the following Terminal commands, ignore the `$` and type the rest. You will see people represent the Terminal on sites like Stackoverflow with the `$`. Repeat. You don't need to type the `$`. (Don't confuse this `$` with the `$` from jQuery)
+## Example Collection:
+`$ use classroom`
 
-`$ git clone https://github.com/kingluddite/mysql-mongo-catchup.git`
+`$ db.students.insert({name: 'Steve', teammate:'true', hobbies:['Coding', 'Reading', 'Running']})`
 
-### Pull down all branches
-* Each of the lessons will be contained inside their own branches. You need to pull down these remote branches to your local machine
-* Use the following two commands to pull remote branches down to your local machine
+## Use find commands to get:
 
-* `$ git fetch --all`
-* `$ git pull --all`
+* A list of everyone in your row.
 
-### Checkout branches locally
-* To focus more on the code we will just checkout a branch to work on the next lesson
-* You have access to the repo after the Catchup so you can play around with the code (the best way to learn how to code is.... to code)
-* To checkout a branch just type any of the following to checkout that particular branch
-* To see all your branches you can type `$ git branch`, (you won't see a list of the branches until you check each one out individually)
-* To break out of the list of branches type `q` for quit
+`$ db.students.find({row:3})`
 
-```
-$ git checkout master
-$ git checkout 01-basic-sql
-$ git checkout 02-connect-mysql
-$ git checkout 03-get-route-question
-$ git checkout 04-activity-01-start
-$ git checkout 05-activity-01-solution
-$ git checkout 06-sequelize-code-review
-$ git checkout 07-activity-02-start
-$ git checkout 08-activity-02-solution
-$ git checkout 09-mongodb-cli
-$ git checkout 10-activity-03-start
-$ git checkout 10-activity-03-solution
-```
+* An entry for a single person.
+
+`$ db.students.find({name:'Steve'})`
+
+## Add Extreme Basketweaving to your array of hobbies.
+
+`$ db.students.update({name: "Steve"}, {$push: {"hobbies":"Extreme Basketweaving"}})`
+
+### Change a student's hobby.
+
+`$ db.students.update({name: "NAME-OF-STUDENT"}, {$set: {hobbies:["Extreme Basketweaving"]}})`
+
+## Remove a student from your database.
+
+`$ db.students.remove({name: "NAME-OF-STUDENT"})`
