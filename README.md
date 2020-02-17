@@ -1,36 +1,19 @@
-# Catchup #4: MySQL & Mongo
+# Activity III ( 15 min )
+Slack out the following Instructions:
 
-## Instructions
-### Clone to your computer
-* **note** The `$` below means "Type this in the Terminal". When writing the following Terminal commands, ignore the `$` and type the rest. You will see people represent the Terminal on sites like Stackoverflow with the `$`. Repeat. You don't need to type the `$`. (Don't confuse this `$` with the `$` from jQuery)
+A. Use the command line to create a classroom database. Insert entries for yourself and the students in your class into the students collection. Each document should have:
 
-`$ git clone https://github.com/kingluddite/mysql-mongo-catchup.git`
+1. A field of name with the person's name.
+2. A field of booleans that show if they were in your last group Project.
+4. A field of hobbies with an array of the hobbies the person likes to do.
 
-### Pull down all branches
-* Each of the lessons will be contained inside their own branches. You need to pull down these remote branches to your local machine
-* Use the following two commands to pull remote branches down to your local machine
+B. Use find commands to get:
 
-* `$ git fetch --all`
-* `$ git pull --all`
+1. A list of everyone in your last group project room.
+2. An entry for a single person.
 
-### Checkout branches locally
-* To focus more on the code we will just checkout a branch to work on the next lesson
-* You have access to the repo after the Catchup so you can play around with the code (the best way to learn how to code is.... to code)
-* To checkout a branch just type any of the following to checkout that particular branch
-* To see all your branches you can type `$ git branch`, (you won't see a list of the branches until you check each one out individually)
-* To break out of the list of branches type `q` for quit
+C. Review each of the following scenarios and perform the necessary actions to modify the collection accordingly:
 
-```
-$ git checkout master
-$ git checkout 01-basic-sql
-$ git checkout 02-connect-mysql
-$ git checkout 03-get-route-question
-$ git checkout 04-activity-01-start
-$ git checkout 05-activity-01-solution
-$ git checkout 06-sequelize-code-review
-$ git checkout 07-activity-02-start
-$ git checkout 08-activity-02-solution
-$ git checkout 09-mongodb-cli
-$ git checkout 10-activity-03-start
-$ git checkout 10-activity-03-solution
-```
+1. You've decided to take on a new hobby. Add Extreme Basket Weaving to your array of hobbies.
+2. Another student in your breakout room saw your cool new hobby and wisely decided to switch all of their free time to Basketweaving. Update their listed hobby to reflect this.
+3. Another student thinks your new hobby is silly and insulted your latest underwater basket. Remove them from your collection!
