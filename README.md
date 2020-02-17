@@ -1,34 +1,109 @@
-# Catchup #4: MySQL & Mongo
+# MongoDB CLI
 
-## Instructions
-### Clone to your computer
-* **note** The `$` below means "Type this in the Terminal". When writing the following Terminal commands, ignore the `$` and type the rest. You will see people represent the Terminal on sites like Stackoverflow with the `$`. Repeat. You don't need to type the `$`. (Don't confuse this `$` with the `$` from jQuery)
 
-`$ git clone https://github.com/kingluddite/mysql-mongo-catchup.git`
+## Let's review basic commands
 
-### Pull down all branches
-* Each of the lessons will be contained inside their own branches. You need to pull down these remote branches to your local machine
-* Use the following two commands to pull remote branches down to your local machine
+## How to create a collection
+1. Start up a new Database by switching to it
 
-* `$ git fetch --all`
-* `$ git pull --all`
-
-### Checkout branches locally
-* To focus more on the code we will just checkout a branch to work on the next lesson
-* You have access to the repo after the Catchup so you can play around with the code (the best way to learn how to code is.... to code)
-* To checkout a branch just type any of the following to checkout that particular branch
-* To see all your branches you can type `$ git branch`, (you won't see a list of the branches until you check each one out individually)
-* To break out of the list of branches type `q` for quit
+* **note** The Database doesn't exist until you create a collection
 
 ```
-$ git checkout master
-$ git checkout 01-basic-sql
-$ git checkout 02-connect-mysql
-$ git checkout 03-get-route-question
-$ git checkout 04-activity-01-start
-$ git checkout 05-activity-01-solution
-$ git checkout 06-sequelize-code-review
-$ git checkout 07-activity-02-start
-$ git checkout 08-activity-02-solution
-$ git checkout 09-mongodb-cli
+$ use lesson_db
 ```
+
+## Show the current Database by running:
+
+```
+$ db
+```
+
+## How to Insert documents (The C in CRUD)
+* Insert data into the lesson_db Database using this command:
+* **note** This will create the collection automatically
+* (additional note) The contents of the insert are basically a JavaScript object, and include an array
+
+```
+$ db.places.insert({"continent": "Africa", "country":"Morocco", "majorcities": ["Casablanca", "Fez", "Marrakech"]})
+```
+
+## Finding docs (The R In CRUD)
+* Find all data in a Collection using `db.[COLLECTION_NAME].find()`
+* **note** The MongoDB `_id` was created automatically
+* The `_id` is specific for each Document in the Collection
+
+`$ db.places.find()`
+
+### Make your results "pretty"
+`$ db.places.find().pretty()`
+
+
+### Find specific data by matching a field
+`$ db.places.find({ "continent": "Africa" })`
+
+`$ db.places.find({ "country": "Morocco" })`
+
+### Find specific data by matching an `_id`
+
+`$ db.places.find({ _id: [COPY OBJECTID FROM THE PREVIOUS FIND RESULTS] })`
+
+* Example: `$ db.places.find({_id: ObjectId("5416fe1d94bcf86cd785439036")})`
+
+## Updated (The U in CRUD)
+* We update using `$ db.[COLLECTION_NAME].update()`
+
+`$ db.places.update({"country": "Morocco"}, {$set: {"continent": "Antarctica"}})`
+
+* **note** The above will only update the first entry it matches
+
+### How do I update multiple entries?
+* Just add `{multi: true}`
+
+`$ db.places.update({"country": "Morocco"}, {$set: {"continent": "Antarctica"}}, {multi: true})`
+
+## Quiz Question
+* What will happen with I run the following command, even though there is not a `capital` field in the document?
+
+`$ db.places.update({"country": "Morocco"}, {$set: {"capital": "Rabat"}})`
+
+### Answer
+* `$set` will create the field `capital`
+* The newly created field can now be updated with the same command
+
+`$ db.places.update({"country": "Morocco"}, {$set: {"capital": "RABAT"}})`
+
+### How do we update the values in an array?
+* Answer: using `push`
+
+`$ db.places.update({"country": "Morocco"}, {$push: {"majorcities": "Agadir"}})`
+
+## Deleting (The D in CRUD)
+* We delete an entry with `$ db.[COLLECTION_NAME].remove()`
+
+`$ db.places.remove({ "country": "Morocco" })`
+
+* We can also empty a collection with by passing it an empty object
+
+`$ db.places.remove({})`
+
+## How do I drop a collection?
+* `$ db.[COLLECTION_NAME].drop()`
+
+`$ db.places.drop`
+
+## How do I drop a database?
+
+`$ db.dropDatabase()`
+
+## A little info about Mongoose
+* We are not going to use Mongoose in this Catchup session but I want to say a little about it
+* Mongo is very flexible, and makes is easy to save and retrieve data
+* But sometimes we need to be stricter
+* Sometimes, we want to combine 2 collections for information
+* MySQL make that possible with "joins" but how do we do that with MongoDB?
+
+### Mongoose is going to allow us to create joins in MongoDB
+* Stay tuned as we dive deeper into Mongoose in our upcoming classes
+
+### Return to master branch for last activity
+ 
