@@ -1,6 +1,5 @@
 # MongoDB CLI
 
-
 ## Let's review basic commands
 
 ## How to create a collection
