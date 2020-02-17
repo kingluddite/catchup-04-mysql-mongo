@@ -1,0 +1,18 @@
+{
+  "name": "mysql-mongo-catchup",
+  "version": "1.0.0",
+  "description": "* In this sample `connection.js` code, we require the Sequelize package, and use it to create a connect to our Database, (very similar to how we use the MySQL package) * Note how we first require the Sequelize library, and then the connection that we will use to connect to the Database (Sequelize with a lowercase \"s\")",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.4"
+  }
+}

@@ -1,31 +1,50 @@
-# Catchup #4: MySQL & Mongo
+# Review some Sequelize code
+* In this sample `connection.js` code, we require the Sequelize package, and use it to create a connect to our Database, (very similar to how we use the MySQL package)
+* Note how we first require the Sequelize library, and then the connection that we will use to connect to the Database (Sequelize with a lowercase "s")
 
-## Instructions
-### Clone to your computer
-* **note** The `$` below means "Type this in the Terminal". When writing the following Terminal commands, ignore the `$` and type the rest. You will see people represent the Terminal on sites like Stackoverflow with the `$`. Repeat. You don't need to type the `$`. (Don't confuse this `$` with the `$` from jQuery)
+## Install Express, mysql2 and Sequelize
 
-`$ git clone https://github.com/kingluddite/mysql-mongo-catchup.git`
+`$ npm i`
 
-### Pull down all branches
-* Each of the lessons will be contained inside their own branches. You need to pull down these remote branches to your local machine
-* Use the following two commands to pull remote branches down to your local machine
+## Body data for Postman
+* http://localhsot:8080/api/new
+* POST http verb method
+* Body tab in Postman, raw and JSON (application/json)
 
-* `$ git fetch --all`
-* `$ git pull --all`
-
-### Checkout branches locally
-* To focus more on the code we will just checkout a branch to work on the next lesson
-* You have access to the repo after the Catchup so you can play around with the code (the best way to learn how to code is.... to code)
-* To checkout a branch just type any of the following to checkout that particular branch
-* To see all your branches you can type `$ git branch`, (you won't see a list of the branches until you check each one out individually)
-* To break out of the list of branches type `q` for quit
+## Run server
+`$ nodemon server`
 
 ```
-$ git checkout master
-$ git checkout 01-basic-sql
-$ git checkout 02-connect-mysql
-$ git checkout 03-get-route-question
-$ git checkout 04-activity-01-start
-$ git checkout 05-activity-01-solution
-$ git checkout 06-sequelize-code-review
+{
+  "exampleEntry01": "First example",
+  "exampleEntry02": 1984,
+  "exampleEntry03": "2020-02-16T20:40:00.632Z"
+},
+{
+  "exampleEntry01": "second example",
+  "exampleEntry02": 1999,
+  "exampleEntry03": "2020-02-16T20:40:00.632Z"
+},
+{
+  "exampleEntry01": "third example",
+  "exampleEntry02": 2008,
+  "exampleEntry03": "2020-02-16T20:40:00.632Z"
+}
 ```
+
+## View terminal
+* Will show output
+* View data in MySQL Workbench
+
+## MySQL Workbench
+* Export seed data as .sql
+
+`seed.sql`
+
+```
+INSERT INTO `examples` (`exampleEntry01`,`exampleEntry02`,`exampleEntry03`,`createdAt`,`updatedAt`) VALUES ('First example',1984,'2020-02-16 20:40:00','2020-02-17 21:12:07','2020-02-17 21:12:07');
+INSERT INTO `examples` (`exampleEntry01`,`exampleEntry02`,`exampleEntry03`,`createdAt`,`updatedAt`) VALUES ('second example',1999,'2020-02-16 20:40:00','2020-02-17 21:12:26','2020-02-17 21:12:26');
+INSERT INTO `examples` (`exampleEntry01`,`exampleEntry02`,`exampleEntry03`,`createdAt`,`updatedAt`) VALUES ('third example',2008,'2020-02-16 20:40:00','2020-02-17 21:12:31','2020-02-17 21:12:31');
+```
+
+### Return to slides
