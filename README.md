@@ -1,6 +1,7 @@
 # Review some Sequelize code
 * In this sample `connection.js` code, we require the Sequelize package, and use it to create a connect to our Database, (very similar to how we use the MySQL package)
 * Note how we first require the Sequelize library, and then the connection that we will use to connect to the Database (Sequelize with a lowercase "s")
+* Analyze the `package.json` to see what dependencies we need to install
 
 ## Install Express, mysql2 and Sequelize
 
