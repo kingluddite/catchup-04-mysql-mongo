@@ -11,3 +11,6 @@
 `create` - is the same as "Insert" in SQL.
 `update` - is the same as "Update" in SQL (and they're even called the same!).
 `destroy` - is the same as "Delete" in SQL.
+
+## Solution
+`$ git checkout 08-activity-02-solution`
