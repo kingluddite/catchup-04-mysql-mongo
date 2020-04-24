@@ -3,11 +3,41 @@
 ## Create a connection file
 `server.js`
 
-## Create package.json
+```javascript
+var mysql = require("mysql");
+var connection = mysql.createConnection({
+  host: "localhost",
+  port: 3306,
+  // Your username
+  user: '',
+  // Your password
+  password: '',
+  database: 'FosterAgency'
+});
+connection.connect(function(err){
+  if(err) throw err;
+  console.log("connected as id "+ connection.threadId);
+});
+```
+
+## Let's analyze our server.js
+* What npm modules do we need to install?
+* What Database connection info do we need to supply?
+* Read comments
+
+## How do we install npm modules?
+* Create package.json
+
+`$ npm init`
+
+* Shortcut
+
 `$ npm init -y`
 
 ## Install dependencies
-`$ npm install`
+* How do we install dependencies?
+
+`$ npm install mysql`
 
 * Shortcut
 
@@ -20,10 +50,15 @@
 
 `$ node server`
 
-* Nodemon saves time so you don't have to keep restarting server with every change
+* `Nodemon` saves time so you don't have to keep restarting server with every change
 
 `$ nodemon server`
 
+## Show output in terminal
+
 ## Return to slidehow
-* Show Terminal Output
+* Show Terminal Output slide
+
 * Checkout 03-get-route-question
+
+`$ git checkout 03-get-route-question`

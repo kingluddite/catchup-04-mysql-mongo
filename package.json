@@ -1,0 +1,25 @@
+{
+  "name": "mysql-mongo-catchup",
+  "version": "1.0.0",
+  "description": "## Create a connection file `server.js`",
+  "main": "server.js",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kingluddite/mysql-mongo-catchup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kingluddite/mysql-mongo-catchup/issues"
+  },
+  "homepage": "https://github.com/kingluddite/mysql-mongo-catchup#readme"
+}
