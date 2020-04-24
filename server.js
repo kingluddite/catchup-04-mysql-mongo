@@ -20,7 +20,7 @@ var connection = mysql.createConnection({
 });
 
 // connect to db using connection info
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) {
     console.error('error connecting: ' + err.stack);
     return;
@@ -33,15 +33,15 @@ connection.connect(function(err) {
 app.get('/', (req, res) => res.send('Hello World!'));
 
 // /api/dogs
-app.get('/api/dogs', function(req, res) {
-  connection.query('SELECT * FROM Dogs', function(err, data) {
+app.get('/api/dogs', function (req, res) {
+  connection.query('SELECT * FROM Dogs', function (err, data) {
     if (err) throw res.json(err);
     res.json(data);
   });
 });
 
 // api/dogs/:breed
-app.get('/api/dogs/:breed', function(req, res) {
+app.get('/api/dogs/:breed', function (req, res) {
   // INSERT CODE HERE
   // Complete the empty get by breed route
   // When this route is hit, it will show all dogs of a particular breed
