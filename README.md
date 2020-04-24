@@ -54,6 +54,9 @@ connection.connect(function(err){
 
 `$ nodemon server`
 
+### Exit terminal
+`ctrl` + `c`
+
 ## Show output in terminal
 
 ## Return to slidehow
