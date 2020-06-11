@@ -6,6 +6,9 @@
 
 `$ git clone git@github.com:kingluddite/catchup-04-mysql-mongo.git`
 
+## Slideshow
+* Use this [URL for the slideshow for today's catchup](https://mysql-mongo-catchup.netlify.app/)
+
 ### Pull down all branches
 * Each of the lessons will be contained inside their own branches. You need to pull down these remote branches to your local machine
 * Use the following two commands to pull remote branches down to your local machine
