@@ -1,4 +1,7 @@
 # MySQL connection
+## Error
+* If you get this [error](https://i.imgur.com/zWEPUCT.png):
+  - Here is the [solution](https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server):
 
 ## Create a connection file
 `server.js`
